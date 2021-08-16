@@ -2,7 +2,7 @@
 
 This is currently a WIP SPEC file for
 [OWASP/Threat-Dragon](https://github.com/owasp/threat-dragon). Threat Dragon's
-website and build system creates an RPM by default, since it's an Electron App.
+website and build system creates an RPM by default, since it is an Electron App.
 We are not using that RPM because the Fedora packaging guidelines require that
 the SPEC file in the repo works.
 
