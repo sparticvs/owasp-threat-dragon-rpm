@@ -1,0 +1,11 @@
+--- td.desktop/owasp-threat-dragon.desktop	2021-07-29 19:30:54.926901089 -0400
++++ td.desktop/owasp-threat-dragon.desktop.fix	2021-08-17 08:27:43.455638316 -0400
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Encoding=UTF-8
++Version=1.0
++Type=Application
++Terminal=false
++Exec=/opt/OWASP-Threat-Dragon/threatdragon
++Name=OWASP Threat Dragon
++Icon=/opt/OWASP-Threat-Dragon/icon/128x128.png

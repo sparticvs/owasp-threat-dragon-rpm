@@ -1,0 +1,14 @@
+--- td.desktop/electron-builder.json	2021-08-10 06:46:05.000000000 -0400
++++ td.desktop/electron-builder.json	2021-08-16 10:42:24.965335730 -0400
+@@ -38,10 +38,7 @@
+     "icon": "public/content/icons/png/256x256.png",
+     "synopsis": "OWASP Threat Dragon",
+     "target": [
+-       "AppImage",
+-       "snap",
+-       "deb",
+-       "rpm"
++        "dir"
+     ]
+   },
+   "snap": {
