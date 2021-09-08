@@ -3,6 +3,6 @@ Encoding=UTF-8
 Version=1.0
 Type=Application
 Terminal=false
-Exec=/opt/OWASP-Threat-Dragon/threatdragon
+Exec=/opt/OWASP-Threat-Dragon/threat-dragon
 Name=OWASP Threat Dragon
 Icon=/opt/OWASP-Threat-Dragon/icon/128x128.png

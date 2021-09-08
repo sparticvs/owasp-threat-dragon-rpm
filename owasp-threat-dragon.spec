@@ -1,5 +1,5 @@
 Name:	    owasp-threat-dragon
-Version:	1.5.0
+Version:	1.5.3
 Release:	1%{?dist}
 Summary:	An open source, online threat modeling tool from OWASP
 
@@ -38,7 +38,7 @@ npx electron-builder build --linux
 
 install -d -m 755 %{td_desktop_install}
 cp -r %{td_desktop_build}/* %{td_desktop_install}
-chmod 0755 %{td_desktop_install}/{chrome-sandbox,libEGL.so,libffmpeg.so,libGLESv2.so,libvk_swiftshader.so,libvulkan.so,threatdragon}
+chmod 0755 %{td_desktop_install}/{chrome-sandbox,libEGL.so,libffmpeg.so,libGLESv2.so,libvk_swiftshader.so,libvulkan.so,threat-dragon}
 mkdir -p %{td_desktop_install}/icon/
 install -m 644 %{td_desktop_root}/public/content/icons/png/128x128.png %{td_desktop_install}/icon/
 mkdir -p %{buildroot}%{_datadir}/applications/
@@ -70,7 +70,7 @@ rm -rf threat-dragon-%{version}
 %{td_desktop_dir}/libGLESv2.so
 %{td_desktop_dir}/libvk_swiftshader.so
 %{td_desktop_dir}/libvulkan.so
-%{td_desktop_dir}/threatdragon
+%{td_desktop_dir}/threat-dragon
 %{td_desktop_dir}/swiftshader/libEGL.so
 %{td_desktop_dir}/swiftshader/libGLESv2.so
 %license %{td_desktop_dir}/LICENSE.electron.txt
@@ -79,4 +79,9 @@ rm -rf threat-dragon-%{version}
 
 
 %changelog
+* Tue Aug 31 2021 Charles Timko <ctimko@redhat.com> - 1.5.3-1
+- Updating to v1.5.3
+* Tue Aug 15 2021 Charles Timko <ctimko@redhat.com> - 1.5.0-1
+- Initial Version
+
 
