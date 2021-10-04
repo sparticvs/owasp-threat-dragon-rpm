@@ -1,4 +1,50 @@
-app-id: org.owasp.ThreatDragon
+app-id: org.owasp.threatdragon
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '21.08'
+sdk-extensions:
+    - org.freedesktop.Sdk.Extension.node14
+build-options:
+    append-path: /usr/lib/sdk/node14/bin
+command: run.sh # TBD
+finish-args:
+    - --share=ipc # Needed for Xshm
+    - --socket=x11 # Yep
+    - --socket=pulseaudio # Doubt it
+    - --share=network # Maybe
+      # Needs to save files locally so may need
+    - --filesystem=home
+build-options:
+    cflags: -O2 -g
+    cxxflags: -O2 -g
+    env:
+        NPM_CONFIG_LOGLEVEL: info
+modules:
+    - name: OWASP-Threat-Dragon
+      buildsystem: simple
+      build-options:
+          env:
+              XDG_CACHE_HOME: /run/build/ThreatDragon/flatpak-node/cache
+              npm_config_cache: /run/build/ThreatDragon/flatpak-node/npm-cache
+              npm_config_nodedir: /usr/lib/sdk/node14
+              npm_config_offline: 'true'
+      subdir: td.desktop
+      sources:
+          - type: archive
+            url: https://github.com/OWASP/threat-dragon/archive/refs/tags/v1.5.8.tar.gz
+            sha256: 94d642a2e14e709e0d94edc1892ba61a155553741d692f0838dbbed5115e7a5c
+          - generated-sources.json
+          - type: script
+            dest-filename: run.sh
+            commands:
+                - zypak-wrapper.sh /app/main/ThreatDragon "$@"
+      build-commands:
+          - npm install --offline
+          - jq '.linux.target="dir"' <<<$(<electron-builder.json) > electron-builder.json
+          - |
+              . ../flatpak-node/electron-builder-arch-args.sh
+              npm run dist -- $ELECTRON_BUILDER_ARCH_ARGS --linux --dir
+          - cp -a dist/linux*unpacked /app/main
+          - install -Dm755 -t /app/bin/ ../run.sh
