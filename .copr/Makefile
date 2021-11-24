@@ -4,3 +4,4 @@ srpm:
 	cp *.patch /builddir/build/SOURCES/
 	cp owasp-threat-dragon.desktop /builddir/build/SOURCES/
 	rpmbuild -bs owasp-threat-dragon.spec
+	cp /builddir/build/SRPM/* $(outdir)
