@@ -85,7 +85,7 @@ rm -rf threat-dragon-%{version}
 * Tue Aug 31 2021 Charles Timko <ctimko@redhat.com> - 1.5.3-1
 - Updating to v1.5.3
 
-* Tue Aug 15 2021 Charles Timko <ctimko@redhat.com> - 1.5.0-1
+* Tue Aug 17 2021 Charles Timko <ctimko@redhat.com> - 1.5.0-1
 - Initial Version
 
 
