@@ -1,6 +1,6 @@
 Name:	    owasp-threat-dragon
 Version:	1.5.5
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	An open source, online threat modeling tool from OWASP
 
 Group:		OWASP
@@ -26,9 +26,9 @@ An open source, online threat modeling tool from OWASP
 
 %build
 cd td.desktop
-npm install
-npm run build
-npx electron-builder build --linux
+/usr/bin/npm install
+/usr/bin/npm run build
+/usr/bin/npx electron-builder build --linux
 
 %install
 %define td_desktop_dir /opt/OWASP-Threat-Dragon
@@ -79,6 +79,9 @@ rm -rf threat-dragon-%{version}
 
 
 %changelog
+* Wed Dec 01 2021 Charles Timko <sparticvs@popebp.com> - 1.5.5-3
+- Add fullpath to npm/npx
+
 * Wed Dec 01 2021 Charles Timko <sparticvs@popebp.com> - 1.5.5-2
 - Correct invalid date for initial spec file
 
