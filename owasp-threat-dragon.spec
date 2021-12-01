@@ -12,7 +12,8 @@ Patch0:		optimize-electron-build.patch
 # Not a bug - Just lazy at the moment
 Patch1:     desktop_file.patch
 
-BuildRequires:	nodejs >= 10.0
+BuildRequires:	nodejs >= 7.0
+BuildRequires:  npm
 
 %description
 An open source, online threat modeling tool from OWASP
@@ -26,9 +27,10 @@ An open source, online threat modeling tool from OWASP
 
 %build
 cd td.desktop
-/usr/bin/npm install
-/usr/bin/npm run build
-/usr/bin/npx electron-builder build --linux
+npm -g update npm
+npm install
+npm run build
+npx electron-builder build --linux
 
 %install
 %define td_desktop_dir /opt/OWASP-Threat-Dragon
