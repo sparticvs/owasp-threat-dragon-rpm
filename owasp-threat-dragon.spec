@@ -1,6 +1,6 @@
 Name:	    owasp-threat-dragon
 Version:	1.5.5
-Release:	3%{?dist}
+Release:	4%{?dist}
 Summary:	An open source, online threat modeling tool from OWASP
 
 Group:		OWASP
@@ -81,6 +81,9 @@ rm -rf threat-dragon-%{version}
 
 
 %changelog
+* Wed Dec 01 2021 Charles Timko <sparticvs@popebp.com> - 1.5.5-4
+- Add npm rpm to BuildRequires
+
 * Wed Dec 01 2021 Charles Timko <sparticvs@popebp.com> - 1.5.5-3
 - Add fullpath to npm/npx
 
