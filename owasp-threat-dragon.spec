@@ -79,6 +79,9 @@ rm -rf threat-dragon-%{version}
 
 
 %changelog
+* Wed Dec 01 2021 Charles Timko <sparticvs@popebp.com> - 1.5.5-2
+- Correct invalid date for initial spec file
+
 * Sat Sep 25 2021 Charles Timko <ctimko@redhat.com> - 1.5.5-1
 - Updating to v1.5.5
 
