@@ -1,5 +1,5 @@
 Name:	    owasp-threat-dragon
-Version:	1.5.8
+Version:	1.6.0
 Release:	1%{?dist}
 Summary:	An open source, online threat modeling tool from OWASP
 
@@ -81,6 +81,9 @@ rm -rf threat-dragon-%{version}
 
 
 %changelog
+* Mon Dec 06 2021 Charles Timko <sparticvs@popebp.com> - 1.6.0-1
+- Add v1.6.0 release
+
 * Mon Dec 06 2021 Charles Timko <sparticvs@popebp.com> - 1.5.8-1
 - Add v1.5.8 release
 
