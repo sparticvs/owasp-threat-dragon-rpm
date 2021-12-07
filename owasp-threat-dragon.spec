@@ -1,6 +1,6 @@
 Name:	    owasp-threat-dragon
 Version:	1.6.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	An open source, online threat modeling tool from OWASP
 
 Group:		OWASP
@@ -11,6 +11,8 @@ Source0:	https://github.com/OWASP/threat-dragon/archive/refs/tags/v%{version}.ta
 Patch0:		optimize-electron-build.patch
 # Not a bug - Just lazy at the moment
 Patch1:     desktop_file.patch
+# Electron-builder 22.11+ doesn't work with pre-Node v12
+Patch2:     fix-electron-builder.patch
 
 BuildRequires:	nodejs >= 7.0
 BuildRequires:  npm
@@ -81,6 +83,9 @@ rm -rf threat-dragon-%{version}
 
 
 %changelog
+* Tue Dec 07 2021 Charles Timko <sparticvs@popebp.com> - 1.6.0-2
+- Rollback electron-builder version
+
 * Mon Dec 06 2021 Charles Timko <sparticvs@popebp.com> - 1.6.0-1
 - Add v1.6.0 release
 
