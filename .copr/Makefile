@@ -1,5 +1,6 @@
 srpm:
-	dnf -y install rpmdevtools rpm-build nodejs:14 npm
+	dnf -y module install nodejs:14
+	dnf -y install rpmdevtools rpm-build npm
 	npm up -g npm
 	spectool -g -R owasp-threat-dragon.spec
 	cp *.patch /builddir/build/SOURCES/
