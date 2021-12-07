@@ -1,6 +1,6 @@
 Name:	    owasp-threat-dragon
 Version:	1.6.0
-Release:	4%{?dist}
+Release:	5%{?dist}
 Summary:	An open source, online threat modeling tool from OWASP
 
 Group:		OWASP
@@ -11,10 +11,8 @@ Source0:	https://github.com/OWASP/threat-dragon/archive/refs/tags/v%{version}.ta
 Patch0:		optimize-electron-build.patch
 # Not a bug - Just lazy at the moment
 Patch1:     desktop_file.patch
-# Electron-builder 22.11+ doesn't work with pre-Node v12
-Patch2:     fix-electron-builder.patch
 
-BuildRequires:	nodejs >= 7.0
+BuildRequires:	nodejs >= 14
 BuildRequires:  npm
 
 %description
@@ -26,7 +24,6 @@ An open source, online threat modeling tool from OWASP
 %setup -q -n threat-dragon-%{version}
 %patch0 -p0
 %patch1 -p0
-%patch2 -p1
 
 %build
 cd td.desktop
@@ -48,7 +45,6 @@ mkdir -p %{td_desktop_install}/icon/
 install -m 644 %{td_desktop_root}/public/content/icons/png/128x128.png %{td_desktop_install}/icon/
 mkdir -p %{buildroot}%{_datadir}/applications/
 install -m 644 %{td_desktop_root}/owasp-threat-dragon.desktop %{buildroot}%{_datadir}/applications/
-# Add a .desktop file
 
 %clean
 umask 022
@@ -84,6 +80,9 @@ rm -rf threat-dragon-%{version}
 
 
 %changelog
+* Tue Dec 07 2021 Charles Timko <sparticvs@popebp.com> - 1.6.0-5
+- Remove patches and require NodeJS:14
+
 * Tue Dec 07 2021 Charles Timko <sparticvs@popebp.com> - 1.6.0-4
 - Strip 1 dir level from patch2
 
