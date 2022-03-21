@@ -80,7 +80,7 @@ rm -rf threat-dragon-%{version}
 
 
 %changelog
-* Mon Mar 21 2022 "Charles `sparticvs` Timko <sparticvs@popebp.com>" - 1.6.1-1
+* Mon Mar 21 2022 Charles `sparticvs` Timko <sparticvs@popebp.com> - 1.6.1-1
 - "Updating to v1.6.1"
 
 * Tue Dec 07 2021 Charles Timko <sparticvs@popebp.com> - 1.6.0-5
