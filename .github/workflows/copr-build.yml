@@ -2,6 +2,8 @@
 name: RPM build in Fedora Project COPR
 on:
   pull_request:
+    types:
+      - opened
     branches:
       - 'update/**'
 
