@@ -1,0 +1,19 @@
+specfile_path: owasp-threat-dragon.spec
+
+files_to_sync:
+  - desktop_file.patch
+  - optimize-electron-build.patch
+  - owasp-threat-dragon.desktop
+  - owasp-threat-dragon.spec
+  - sources
+
+upstream_package_name: owasp-threat-dragon
+
+downstream_package_name: owasp-threat-dragon
+
+jobs:
+  - job: copr_build
+    trigger: commit
+    targets:
+      - epel-all
+      - fedora-all
