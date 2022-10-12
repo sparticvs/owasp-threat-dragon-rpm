@@ -13,6 +13,8 @@ downstream_package_name: owasp-threat-dragon
 
 jobs:
   - job: copr_build
+    owner: "sparticvs"
+    project: "owasp-threat-dragon-unstable"
     trigger: commit
     targets:
       - epel-all
