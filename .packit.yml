@@ -17,7 +17,8 @@ jobs:
     project: "owasp-threat-dragon-unstable"
     trigger: commit
     targets:
-      - epel-all
       - fedora-all
+      - epel-8-x86_64
+      - epel-9-x86_64
       - centos-stream-8-x86_64
       - centos-stream-9-x86_64
